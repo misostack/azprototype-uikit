@@ -1,0 +1,27 @@
+/*!
+Theme Name: AZProtype UIKIT 2020
+Theme URI: http://uikit.azprototype.site
+Author: azprototype
+Author URI: http://azprototype.site
+Description: UIKIT Prototype
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: responsive
+Text Domain: 
+HTML Template base on UIKIT, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+@charset "utf-8";
+// 1. Your custom variables and variable overwrites.
+$global-link-color: #DA7D02;
+
+// 2. Import default variables and available mixins.
+@import "uikit/src/scss/variables-theme.scss";
+@import "uikit/src/scss/mixins-theme.scss";
+
+// 3. Your custom mixin overwrites.
+@mixin hook-card() { color: #000; }
+
+// 4. Import UIkit.
+@import "uikit/src/scss/uikit-theme.scss";
