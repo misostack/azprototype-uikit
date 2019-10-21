@@ -5,6 +5,7 @@ const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const getRules = function (mode) {
     const rules = [
@@ -56,7 +57,10 @@ const getPlugins = function (mode) {
             // both options are optional
             filename: "assets/css/[name]_[hash].css",
             chunkFilename: "assets/css/[id]_[hash].css"
-        })
+        }),
+        new CopyWebpackPlugin([
+            { from: src + '/assets/images', to: dist + '/assets/images' }
+        ]),  		
     ];
     if (mode === 'production') {
         plugins.push(new CleanWebpackPlugin());
