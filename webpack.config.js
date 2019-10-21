@@ -59,7 +59,8 @@ const getPlugins = function (mode) {
             chunkFilename: "assets/css/[id]_[hash].css"
         }),
         new CopyWebpackPlugin([
-            { from: src + '/assets/images', to: dist + '/assets/images' }
+            { from: src + '/assets/images', to: dist + '/assets/images' },
+			{ from: src + '/static' }
         ]),  		
     ];
     if (mode === 'production') {
